@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "AI Slop Blocker",
+    "version": "0.1.0",
+    "description": "Hide YouTube videos marked as AI slop.",
+    "permissions": [
+        "contextMenus",
+        "storage"
+    ],
+    "host_permissions": [
+        "*://www.youtube.com/*"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.youtube.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
